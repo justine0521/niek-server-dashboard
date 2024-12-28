@@ -364,6 +364,15 @@ app.get('/orders', async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send({ message: "Welcome to my API" });
+});
+
+app.get("/api/data", (req, res) => {
+  res.json({ data: "Sample data" });
+});
+
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Backend server is running on port ${PORT}`);
