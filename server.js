@@ -372,8 +372,6 @@ app.get("/api/data", (req, res) => {
   res.json({ data: "Sample data" });
 });
 
-
-// Start the server
 app.listen(PORT, () => {
   console.log(`Backend server is running on port ${PORT}`);
 });
