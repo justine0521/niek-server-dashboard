@@ -39,6 +39,10 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Niek Server! Now leave');
+});
+
 // Multer setup for file uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -97,7 +101,6 @@ app.post('/api/admin/login', async (req, res) => {
     }
 
     const token = jwt.sign({ id: admin._id, email: admin.email }, JWT_SECRET, {
-      expiresIn: '1h',
     });
 
     res.status(200).json({ token });
